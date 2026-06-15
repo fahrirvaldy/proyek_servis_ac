@@ -1,0 +1,95 @@
+2.1 Arsitektur Sistem & Struktur Deployment
+Aplikasi dibangun menggunakan Component-Based Architecture memanfaatkan framework React/Next.js
+[cite: 13]. Seluruh halaman dikompilasi ke dalam aset statis melalui metode Static Site Generation (SSG)
+dan dideploy di infrastruktur global Vercel [cite: 13]. Pendekatan ini dipilih guna mengeliminasi latensi
+pemrosesan server-side pada runtime, menghasilkan skor *Core Web Vitals* yang optimal untuk menunjang
+indeksasi SEO Lokal [cite: 13].
+
+2.2 Struktur Data & Skema Mock Data (JSON)
+Seluruh data produk unit fisik dihilangkan secara total dari struktur basis data statis aplikasi [cite: 14]. Struktur
+data kini dikonsolidasikan ke dalam satu skema tunggal `layanan` yang menampung 5 pilar bisnis utama
+Rangga Teknik [cite: 14]:
+
+{
+"layanan": [
+{
+"id": "SRV-01",
+"nama": "Cuci dan Pembersihan AC (Maintenance)",
+"deskripsi": "Pembersihan rutin unit indoor & outdoor secara berkala untuk
+menghilangkan debu, kotoran, dan bakteri agar udara kembali bersih dan dingin.",
+"harga": "Mulai dari Rp 75.000",
+"kategori": "perawatan",
+"template_wa": "Halo Rangga Teknik, saya mau order jasa Cuci dan Pembersihan AC
+(Maintenance) untuk di rumah/kantor saya."
+},
+{
+"id": "SRV-02",
+"nama": "Pengecekan dan Pengisian Freon",
+"deskripsi": "Memeriksa tekanan refrigerant (freon) dan menambah atau mengisinya
+jika terjadi kebocoran agar kinerja pendinginan unit tetap maksimal.",
+"harga": "Mulai dari Rp 150.000",
+"kategori": "perawatan",
+"template_wa": "Halo Rangga Teknik, saya ingin mengajukan permohonan Jasa
+Pengecekan dan Pengisian Freon karena AC mulai kurang dingin."
+},
+{
+"id": "SRV-03",
+"nama": "Perbaikan Kerusakan (Reparasi)",
+"deskripsi": "Solusi perbaikan komprehensif untuk kendala AC kurang dingin, bocor
+air (netes), unit berisik, hingga kerusakan pada komponen kelistrikan.",
+"harga": "Pengecekan Rp 50.000 (Biaya perbaikan menyesuaikan tingkat kerusakan)",
+"kategori": "perbaikan",
+"template_wa": "Halo Rangga Teknik, AC saya mengalami kendala kerusakan teknis.
+Saya mau order Jasa Perbaikan Kerusakan (Reparasi)."
+},
+{
+"id": "SRV-04",
+"nama": "Bongkar Pasang dan Relokasi AC",
+"deskripsi": "Layanan pemindahan unit AC secara profesional dari satu ruangan ke
+ruangan lain, antar lantai, antar gedung, atau instalasi unit baru.",
+"harga": "Mulai dari Rp 250.000",
+"kategori": "instalasi",
+"template_wa": "Halo Rangga Teknik, saya membutuhkan bantuan untuk Jasa Bongkar
+Pasang dan Relokasi AC."
+},
+{
+"id": "SRV-05",
+"nama": "Overhaul (Cuci Besar)",
+"deskripsi": "Pembongkaran total unit AC secara menyeluruh untuk dibersihkan dari
+tumpukan kotoran membandel, kerak, atau lendir yang menyumbat evaporator.",
+"harga": "Mulai dari Rp 300.000",
+"kategori": "perbaikan",
+"template_wa": "Halo Rangga Teknik, saya ingin memesan layanan premium Overhaul
+(Cuci Besar) untuk unit AC saya."
+}
+]
+}
+2.3 Desain Komponen (UI Logic & Analytics Integration)
+`Layout.js`: Komponen pembungkus tingkat teratas (Root Layout). Bertanggung jawab menginjeksikan
+script global Google Tag Manager / Meta Pixel secara asinkron tanpa memblokir proses rendering
+komponen UI utama [cite: 16].
+`HeroSection.js`: Komponen visual pertama di bagian atas halaman [cite: 17]. Menyediakan tombol aksi
+utama yang memicu fungsi pengiriman event analitik secara spesifik (`click_wa_hero`) sesaat sebelum
+mengarahkan pengguna ke tautan WhatsApp [cite: 17].
+`ServiceCard.js`: Komponen kartu modular yang menerima properti (*props*) dinamis yang dipetakan
+langsung dari JSON `layanan` [cite: 18]. Mengontrol penataan visual deskripsi, label harga, serta
+menyusun format URL WhatsApp (menggunakan parameter `encodeURIComponent` untuk properti
+`template_wa`) [cite: 14, 18].
+`ServiceCatalog.js`: Komponen grid yang menggantikan fungsi `ProductCatalog.js` [cite: 18]. Komponen
+ini mengimplementasikan logika state internal React (`useState`) untuk menyaring baris data berdasarkan
+nilai `kategori` (perawatan, perbaikan, instalasi) tanpa memerlukan pemuatan ulang halaman (*zero-reload
+filtering*).
+`ContactButton.js`: Komponen tombol mengambang (*floating action button*) yang menetap di pojok
+kanan bawah layar [cite: 19]. Tombol ini dibekali pelacak analitik mandiri yang merekam pemicu event
+(`click_wa_floating`) guna membedakan konversi organik dari katalog dan konversi langsung [cite: 19].
+
+2.4 Spesifikasi SEO Lokal & Skema Metadata Halaman
+Setiap berkas halaman utama wajib mengekspor objek metadata terstruktur. Placeholder kota wajib diganti
+dengan target wilayah operasi teknis nyata saat proses kompilasi web [cite: 20]:
+export const metadata = {
+title: 'Jasa Servis & Cuci AC Terpercaya di [Nama Kota] | Rangga Teknik',
+description: 'Rangga Teknik melayani cuci AC, pengecekan freon, reparasi bocor, bongkar
+pasang, dan overhaul AC bergaransi di wilayah [Nama Kota] dan sekitarnya.',
+keywords: 'cuci ac [kota], isi freon ac [kota], reparasi ac [kota], bongkar pasang ac
+[kota], overhaul ac [kota], servis ac terdekat'
+}

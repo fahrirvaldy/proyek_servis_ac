@@ -1,0 +1,108 @@
+1.1 Deskripsi Produk
+Rangga Teknik adalah platform web modern yang berfungsi sebagai pusat layanan HVAC (Heating,
+Ventilation, and Air Conditioning) murni yang berfokus penuh pada penyediaan solusi jasa perawatan,
+perbaikan, dan instalasi AC [cite: 1]. Mengubah arah strategis dari versi terdahulu, versi 2.0 ini sepenuhnya
+mengeliminasi modul pengadaan atau jual-beli unit AC baru/second [cite: 1], guna menghadirkan pengalaman
+pengguna yang lebih terfokus, cepat, dan spesifik pada kebutuhan perbaikan teknis pelanggan langsung.
+
+1.2 Tujuan Bisnis
+Informasi & SEO Lokal: Menampilkan profil jasa teknis, transparansi biaya acuan, dan wilayah cakupan
+operasional secara agresif melalui optimasi SEO Lokal (berbasis Kota dan Kecamatan target) untuk
+menjaring lalu lintas pencarian organik secara presisi [cite: 2, 21].
+Konversi Instan: Memangkas alur pemesanan dengan menyediakan integrasi langsung ke WhatsApp
+untuk masing-masing dari 5 jenis layanan inti yang terukur secara analitik di setiap klik tombolnya [cite: 3,
+10].
+Profesionalisme Teknis: Membangun reputasi digital yang kuat dan tepercaya melalui antarmuka web
+yang responsif, berkecepatan tinggi, aman (HTTPS), serta menampilkan bukti sosial (social proof) yang
+valid [cite: 4, 10, 11, 12].
+
+1.3 Target Pengguna
+Pemilik rumah tinggal, pengelola kantor, pemilik ruko, atau pelaku usaha/bisnis lokal yang membutuhkan
+perawatan AC berkala, penanganan kerusakan darurat, maupun jasa instalasi profesional di wilayah
+operasional spesifik yang ditentukan [cite: 5].
+1.4 Fitur Utama & Spesifikasi Antarmuka (Web 2.0 Refinement)
+
+Nama Fitur Deskripsi & Cakupan Fungsional
+
+Target Perbaikan / Spesifikasi
+v2.0
+
+Landing Page Berbasis
+Aksi
+
+Halaman utama yang memuat Hero Section
+persuasif, nilai tambah (keunggulan), cakupan
+wilayah operasional, dan Call to Action (CTA) yang
+jelas [cite: 6].
+
+Integrasi kata kunci SEO Lokal
+(Kota/Kecamatan target)
+disematkan secara alami pada
+elemen Headline utama ( H1 )
+[cite: 7, 21].
+
+Katalog Interaktif 5
+Layanan Inti
+
+Galeri interaktif khusus yang menampilkan 5 menu
+layanan utama beserta penjelasan detail
+pengerjaan dan estimasi harga dasar yang
+transparan [cite: 8].
+
+Menggantikan fungsi katalog
+produk unit [cite: 1, 8].
+Ditambahkan sistem filter/
+navigasi berbasis kategori
+perawatan (Maintenance) vs
+perbaikan berat (Reparasi/
+Overhaul).
+
+Pemesanan WhatsApp
+Dinamis
+
+Integrasi tombol langsung menuju WhatsApp
+resmi Rangga Teknik yang tersemat pada tiap
+kartu layanan (Service Card) [cite: 8, 9].
+
+Implementasi tautan dinamis
+yang membawa parameter
+templat teks pesan otomatis
+yang berbeda 100% untuk
+masing-masing dari 5 jenis
+layanan [cite: 9, 14].
+
+Testimoni & Social
+Proof
+
+Daftar ulasan autentik dari pelanggan terdahulu
+untuk meningkatkan rasa percaya calon
+konsumen baru [cite: 9, 10].
+
+Komponen visual berbasis
+rating bintang (1-5) dengan
+optimasi performa pemuatan
+gambar ulasan [cite: 10].
+
+Pelacakan Konversi
+Analitik
+
+Fitur internal tidak terlihat untuk mengukur
+efisiensi setiap saluran promosi dan perilaku klik
+pengguna [cite: 10].
+
+Injeksi event Google Analytics /
+Meta Pixel yang aktif secara
+otomatis ketika terjadi interaksi
+klik pada tombol WhatsApp apa
+pun [cite: 10, 16].
+
+1.5 Spesifikasi Teknis & Non-Fungsional (Vibe Coding Strategy)
+Frontend Architecture: Menggunakan framework modern berbasis komponen (Next.js atau React) untuk
+menjamin antarmuka yang sangat responsif, baik saat diakses via ponsel pintar (mobile-first) maupun
+komputer desktop [cite: 11, 13].
+Infrastruktur & Penyebaran: Memanfaatkan cloud hosting statis berkecepatan tinggi (Vercel atau
+Firebase) untuk siklus rilis/deployment cepat dengan pendekatan Static Site Generation (SSG) demi
+performa kecepatan maksimal [cite: 12, 13].
+Optimasi & Keamanan: Wajib menerapkan kompresi gambar otomatis (format WebP/AVIF), pemuatan
+malas (lazy loading), serta pengamanan enkripsi penuh menggunakan SSL/TLS (protokol HTTPS wajib
+aktif) [cite: 12, 27].

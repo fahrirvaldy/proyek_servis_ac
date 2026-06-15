@@ -1,0 +1,104 @@
+3.1 Strategi Pengujian
+Kerangka pengujian mengadopsi pendekatan dua lapis terintegrasi: Frontend Component Testing untuk
+menguji kestabilan antarmuka, dan Functional Behavioral Testing untuk memvalidasi alur konversi [cite:
+22]. Pengujian ini diperluas secara ketat melalui lapisan *Analytics Tracking Validation* dan *Local SEO
+Semantic Check* guna memastikan fungsionalitas penargetan pemasaran digital bekerja tanpa cacat [cite:
+22].
+3.2 Matriks Pengujian Aplikasi (Test Matrix v2.0)
+
+ID Fitur Pengujian Skenario Skenis / Langkah Uji
+
+Hasil yang Diharapkan (Kriteria
+Kelulusan)
+
+TC-01 Responsivitas
+Antarmuka [cite: 23]
+
+Akses halaman web menggunakan
+simulator resolusi di Google Chrome
+untuk perangkat Mobile (iPhone/
+Android), Tablet, dan Desktop Monitor
+[cite: 23, 30].
+
+Tata letak grid layanan menyesuaikan
+susunannya secara otomatis, teks
+terbaca jelas, komponen tidak
+tumpang tindih, dan hamburger menu
+bekerja responsif [cite: 24].
+
+TC-02 Tombol CTA Hero
+Section [cite: 24]
+
+Akses elemen Hero Section, lakukan
+klik pada tombol aksi utama "Pesan
+Servis" [cite: 24].
+
+Sistem mengalihkan pengguna ke tab
+browser baru menuju URL
+`api.whatsapp.com` dengan isi teks
+parameter yang sesuai standar teks
+pembuka umum [cite: 25, 29].
+
+TC-03 Katalog Jasa &
+Filter Logis [cite: 26]
+
+Menggulir layar ke area
+`ServiceCatalog.js` dan memilih
+tombol filter kategori (contoh:
+"Perawatan") [cite: 26].
+
+Grid menyaring data secara instan;
+hanya kartu layanan dengan properti
+kategori "perawatan" yang tampil
+(Cuci AC dan Freon). Gambar
+penunjang tampil sempurna [cite: 27].
+
+TC-04 Validasi Parameter
+Pesan WA [cite: 25]
+
+Lakukan klik berurutan pada 5 tombol
+
+WhatsApp yang berbeda di masing-
+masing kartu layanan [cite: 25, 28].
+
+Setiap klik wajib menghasilkan string
+parameter `text` yang unik dan akurat,
+sesuai dengan isi nilai `template_wa`
+yang didefinisikan pada dokumen data
+JSON [cite: 14, 25].
+
+TC-05 Keamanan Saluran
+[cite: 27]
+
+Memeriksa tautan URL utama situs
+pada kolom address bar di browser
+populer [cite: 27, 30].
+
+Protokol wajib menampilkan indikator
+ikon gembok terkunci secara penuh.
+Akses HTTP biasa otomatis dialihkan
+(301 redirect) ke saluran HTTPS [cite:
+28].
+
+TC-06 Validasi Event
+Pelacakan Analitik
+[cite: 29]
+
+Membuka ekstensi Google Tag
+Assistant / Konsol Developer Browser,
+lalu mengklik salah satu tombol
+WhatsApp [cite: 29].
+
+Konsol mencatat pengiriman payload
+event konversi digital yang valid
+menuju server Google Analytics /
+Meta Pixel tanpa adanya *event
+dropout* [cite: 10, 29].
+
+TC-07 Validasi Semantik
+SEO Lokal [cite: 29]
+
+Melakukan inspeksi elemen (`Inspect
+Element`) pada tag struktur HTML
+bagian `` halaman produksi [cite: 29].
+Tag `

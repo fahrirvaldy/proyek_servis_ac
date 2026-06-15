@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rangga Teknik - Jasa Servis &amp; Cuci AC Terpercaya</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#ecf1ff",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#42474f",
+                        "primary-container": "#0f4c81",
+                        "outline-variant": "#c2c7d1",
+                        "surface": "#f9f9ff",
+                        "surface-container": "#e7eeff",
+                        "on-tertiary-fixed": "#171c1f",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#001c37",
+                        "background": "#f9f9ff",
+                        "primary-fixed": "#d2e4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#464b4e",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-background": "#111c2d",
+                        "tertiary": "#303438",
+                        "inverse-primary": "#a0c9ff",
+                        "tertiary-fixed-dim": "#c3c7cb",
+                        "primary": "#00355f",
+                        "outline": "#727780",
+                        "secondary": "#505f76",
+                        "on-tertiary-fixed-variant": "#43474b",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-primary-container": "#8ebdf9",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#2d6197",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "on-tertiary-container": "#b6bbbf",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#111c2d",
+                        "surface-container-high": "#dee8ff",
+                        "on-secondary-container": "#54647a",
+                        "on-primary-fixed-variant": "#07497d",
+                        "surface-variant": "#d8e3fb",
+                        "surface-container-low": "#f0f3ff",
+                        "inverse-surface": "#263143",
+                        "secondary-container": "#d0e1fb",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#0b1c30",
+                        "surface-dim": "#cfdaf2",
+                        "tertiary-fixed": "#dfe3e7",
+                        "surface-bright": "#f9f9ff",
+                        "surface-container-highest": "#d8e3fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "xl": "64px",
+                        "lg": "40px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["IBM Plex Sans"],
+                        "headline-xl-mobile": ["IBM Plex Sans"],
+                        "headline-xl": ["IBM Plex Sans"],
+                        "body-md": ["IBM Plex Sans"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "label-md": ["IBM Plex Sans"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "headline-lg": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-xl-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .modal-active {
+            overflow: hidden;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-active .accordion-content {
+            max-height: 200px;
+        }
+        .accordion-active .chevron-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface docked full-width top-0 sticky z-50 border-b border-outline-variant flat no shadows">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="lock" data-weight="fill">lock</span>
+<span class="text-headline-md font-headline-md font-bold text-primary">Rangga Teknik</span>
+</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="text-primary border-b-2 border-primary pb-1 text-label-md font-label-md hover:text-primary transition-colors" href="#layanan">Layanan</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#tentang-kami">Tentang Kami</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#testimoni">Testimoni</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" href="#kontak">Kontak</a>
+</nav>
+<a class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded-lg hover:bg-primary-container transition-colors text-label-md font-label-md scale-95 active:scale-90 transition-transform" href="https://api.whatsapp.com/send?phone=1234567890&amp;text=Halo%20Rangga%20Teknik,%20saya%20ingin%20memesan%20layanan%20servis." target="_blank">
+            Pesan Servis
+            <span class="material-symbols-outlined ml-2 text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-xl md:py-[120px] max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-xl">
+<div class="flex-1 flex flex-col gap-md">
+<div class="inline-flex items-center gap-2 bg-surface-container px-sm py-xs rounded-lg border border-outline-variant w-fit">
+<span class="material-symbols-outlined text-primary text-[16px] filled" data-icon="verified_user">verified_user</span>
+<span class="text-label-sm font-label-sm text-primary">Teknisi Tersertifikasi</span>
+</div>
+<h1 class="text-headline-xl-mobile font-headline-xl-mobile md:text-headline-xl md:font-headline-xl text-on-background">
+                Jasa Servis &amp; Cuci AC Terpercaya di Jakarta
+            </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-[600px]">
+                Solusi profesional untuk perawatan, perbaikan, dan instalasi AC dengan teknisi bersertifikat. Layanan cepat, transparan, dan bergaransi.
+            </p>
+<div class="flex items-center gap-sm mt-sm">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded-lg hover:bg-primary-container transition-colors text-label-md font-label-md" href="#layanan">
+                    Pesan Servis
+                    <span class="material-symbols-outlined ml-2 text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="flex-1 w-full h-[400px] md:h-[500px] bg-surface-container rounded-xl border border-outline-variant overflow-hidden relative">
+<img alt="Technician repairing AC" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYB1eAf_00KlgPzcJML_6MDnKf7OUofMBTBxujbgPPYiRplyHxp-SptVvKc17fLjJbSVoWV76ablWe_dcM3TVbJAve-xWq6Bv0XgKOLm_gaWFeyEYBYjGAC6CVtQBqDDfek49WTz098F_vnSAH57D8LUAluNgAv02zIzACCPY6KAlX9SR4Ad0HrbVXpXDgpJwq0gGAvHIBeYVlqiTNq6s19F4-YSCj_CWmKz3BIp_OQYaG5d9aac9p1QF0Ho-GinUJriqKXTp6cRc"/>
+</div>
+</section>
+<!-- Service Catalog -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-xl bg-surface max-w-7xl mx-auto border-t border-outline-variant" id="layanan">
+<div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-md">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-background mb-sm">Katalog Layanan</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Pilih layanan yang sesuai dengan kebutuhan sistem tata udara Anda.</p>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-xs" id="service-filters">
+<button class="px-sm py-xs rounded-lg border border-primary bg-primary text-on-primary text-label-md font-label-md transition-colors filter-btn" data-filter="all">Semua</button>
+<button class="px-sm py-xs rounded-lg border border-outline-variant bg-surface text-on-surface-variant hover:bg-surface-container text-label-md font-label-md transition-colors filter-btn" data-filter="perawatan">Perawatan</button>
+<button class="px-sm py-xs rounded-lg border border-outline-variant bg-surface text-on-surface-variant hover:bg-surface-container text-label-md font-label-md transition-colors filter-btn" data-filter="perbaikan">Perbaikan</button>
+<button class="px-sm py-xs rounded-lg border border-outline-variant bg-surface text-on-surface-variant hover:bg-surface-container text-label-md font-label-md transition-colors filter-btn" data-filter="instalasi">Instalasi</button>
+</div>
+</div>
+<!-- Service Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter" id="service-grid">
+<!-- Card 1 -->
+<div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg hover:shadow-[0px_4px_12px_rgba(15,76,129,0.08)] transition-all overflow-hidden" data-category="perawatan">
+<div class="p-md flex-1 flex flex-col gap-sm">
+<div class="inline-flex px-xs py-[2px] bg-surface-container text-on-secondary-fixed-variant text-[10px] font-bold tracking-wider rounded-lg w-fit uppercase">Perawatan</div>
+<h3 class="text-headline-md font-headline-md text-on-background">Cuci dan Pembersihan AC (Maintenance)</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex-1">Pembersihan menyeluruh unit indoor dan outdoor untuk menjaga performa optimal dan sirkulasi udara bersih.</p>
+<div class="mt-auto bg-surface p-sm rounded-lg border border-outline-variant flex justify-between items-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Harga</span>
+<span class="text-label-md font-label-md font-bold text-on-background">Mulai dari Rp 75.000</span>
+</div>
+</div>
+<a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2 text-label-md font-label-md border-t border-outline-variant" href="https://api.whatsapp.com/send?phone=1234567890&amp;text=Halo%20Rangga%20Teknik,%20saya%20mau%20order%20jasa%20Cuci..." target="_blank">
+                    Pesan Sekarang
+                    <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Other cards remain identical in structure -->
+<div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg hover:shadow-[0px_4px_12px_rgba(15,76,129,0.08)] transition-all overflow-hidden" data-category="perawatan">
+<div class="p-md flex-1 flex flex-col gap-sm">
+<div class="inline-flex px-xs py-[2px] bg-surface-container text-on-secondary-fixed-variant text-[10px] font-bold tracking-wider rounded-lg w-fit uppercase">Perawatan</div>
+<h3 class="text-headline-md font-headline-md text-on-background">Pengecekan dan Pengisian Freon</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex-1">Diagnostik tekanan refrigerant dan pengisian ulang freon (R32, R410A, R22) sesuai spesifikasi teknis pabrikan.</p>
+<div class="mt-auto bg-surface p-sm rounded-lg border border-outline-variant flex justify-between items-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Harga</span>
+<span class="text-label-md font-label-md font-bold text-on-background">Mulai dari Rp 150.000</span>
+</div>
+</div>
+<a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2 text-label-md font-label-md border-t border-outline-variant" href="https://api.whatsapp.com/send?phone=1234567890&amp;text=Halo%20Rangga%20Teknik,%20saya%20mau%20order%20jasa%20isi%20freon..." target="_blank">
+                    Pesan Sekarang
+                    <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg hover:shadow-[0px_4px_12px_rgba(15,76,129,0.08)] transition-all overflow-hidden" data-category="perbaikan">
+<div class="p-md flex-1 flex flex-col gap-sm">
+<div class="inline-flex px-xs py-[2px] bg-error-container text-on-error-container text-[10px] font-bold tracking-wider rounded-lg w-fit uppercase">Perbaikan</div>
+<h3 class="text-headline-md font-headline-md text-on-background">Perbaikan Kerusakan (Reparasi)</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex-1">Troubleshooting komponen elektrikal, mekanikal, sensor, dan perbaikan kebocoran sistem.</p>
+<div class="mt-auto bg-surface p-sm rounded-lg border border-outline-variant flex justify-between items-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Biaya Pengecekan</span>
+<span class="text-label-md font-label-md font-bold text-on-background">Rp 50.000</span>
+</div>
+</div>
+<a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2 text-label-md font-label-md border-t border-outline-variant" href="https://api.whatsapp.com/send?phone=1234567890&amp;text=Halo%20Rangga%20Teknik,%20saya%20mau%20order%20jasa%20perbaikan..." target="_blank">
+                    Pesan Sekarang
+                    <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg hover:shadow-[0px_4px_12px_rgba(15,76,129,0.08)] transition-all overflow-hidden" data-category="instalasi">
+<div class="p-md flex-1 flex flex-col gap-sm">
+<div class="inline-flex px-xs py-[2px] bg-tertiary-container text-on-tertiary-container text-[10px] font-bold tracking-wider rounded-lg w-fit uppercase">Instalasi</div>
+<h3 class="text-headline-md font-headline-md text-on-background">Bongkar Pasang dan Relokasi AC</h3>
+<p class="text-body-md font-body-md text-on-surface-variant flex-1">Instalasi unit baru atau pemindahan unit lama dengan standar pemipaan dan kelistrikan yang aman.</p>
+<div class="mt-auto bg-surface p-sm rounded-lg border border-outline-variant flex justify-between items-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Harga</span>
+<span class="text-label-md font-label-md font-bold text-on-background">Mulai dari Rp 250.000</span>
+</div>
+</div>
+<a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2 text-label-md font-label-md border-t border-outline-variant" href="https://api.whatsapp.com/send?phone=1234567890&amp;text=Halo%20Rangga%20Teknik,%20saya%20mau%20order%20jasa%20bongkar%20pasang..." target="_blank">
+                    Pesan Sekarang
+                    <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Social Proof / Tentang Kami -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-xl md:py-[120px] bg-surface-container-lowest max-w-7xl mx-auto border-t border-outline-variant" id="tentang-kami">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div class="relative">
+<div class="rounded-xl overflow-hidden border border-outline-variant shadow-sm">
+<img alt="Professional HVAC Technician" class="w-full h-full object-cover aspect-[4/3]" src="https://lh3.googleusercontent.com/aida/AP1WRLvg_9r7CYKJMBp_qPqDU_G0Pp5-BmleSWLKSBb1T4vBKQ4zy9pAMvwT0LteJwA4YBG4u7zYlTpkeRtEf_6753P9_I4Lxb3zpPdm3Rvf0kKhMcP6g-sOb5sl7dNvACiA-TDGK0SAmhG5WRiazwisSAJ2pmGne2zW25s9_i44MtXhuRVEFMoNfM7sZTpXn3kRi5goXlTbXP-_RvoJ_vKnPLVVAbv3M0rrPDoYSqNiacBBMCuCmAQhjQEirO0"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-primary text-on-primary p-md rounded-lg shadow-lg hidden md:block">
+<p class="text-label-md font-label-md uppercase tracking-wider">Spesialis Tata Udara Berlisensi</p>
+</div>
+</div>
+<div class="flex flex-col gap-md">
+<div class="flex flex-col gap-sm">
+<span class="text-primary font-bold text-label-sm uppercase tracking-widest">TENTANG KAMI / ABOUT US</span>
+<h2 class="text-headline-lg font-headline-lg text-on-background">
+                        Spesialis Tata Udara Berlisensi &amp; Terpercaya di Jakarta
+                    </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+                        Rangga Teknik melayani cuci AC, pengecekan freon, reparasi bocor, bongkar pasang, dan overhaul AC bergaransi. Kami berfokus murni pada solusi layanan teknis tanpa gangguan modul jual-beli unit fisik.
+                    </p>
+</div>
+<div class="grid grid-cols-1 gap-sm mt-sm">
+<div class="flex items-start gap-sm p-sm bg-surface border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="engineering">engineering</span>
+<div>
+<h4 class="text-label-md font-label-md font-bold text-on-background">Teknisi Berlisensi</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Certified HVAC engineering standards.</p>
+</div>
+</div>
+<div class="flex items-start gap-sm p-sm bg-surface border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="payments">payments</span>
+<div>
+<h4 class="text-label-md font-label-md font-bold text-on-background">Transparansi Biaya</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Strict compliance with base catalog prices.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimoni -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-xl bg-surface-container-lowest max-w-7xl mx-auto border-t border-outline-variant" id="testimoni">
+<h2 class="text-headline-lg font-headline-lg text-on-background mb-lg text-center">Testimoni Pelanggan</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-md border border-outline-variant rounded-lg bg-surface">
+<div class="flex items-center gap-1 mb-sm text-[#F59E0B]">
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-md">"Teknisi sangat profesional dan datang tepat waktu. AC saya yang bocor langsung teratasi dengan baik."</p>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-bold">B</div>
+<div>
+<p class="text-label-md font-label-md text-on-background">Budi Santoso</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="verified">verified</span>
+                            Pelanggan Terverifikasi
+                        </p>
+</div>
+</div>
+</div>
+<!-- Repeated testimonials -->
+<div class="p-md border border-outline-variant rounded-lg bg-surface">
+<div class="flex items-center gap-1 mb-sm text-[#F59E0B]">
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-md">"Pemasangan AC baru sangat rapi. Teknisi menjelaskan dengan detail cara perawatannya. Sangat puas."</p>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-bold">A</div>
+<div>
+<p class="text-label-md font-label-md text-on-background">Anita Wijaya</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="verified">verified</span>
+                            Pelanggan Terverifikasi
+                        </p>
+</div>
+</div>
+</div>
+<div class="p-md border border-outline-variant rounded-lg bg-surface">
+<div class="flex items-center gap-1 mb-sm text-[#F59E0B]">
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined filled text-[20px]" data-icon="star">star</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="star">star</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-md">"Layanan cuci AC rutin sangat memuaskan. Udara jadi lebih bersih dan dingin merata. Recomended."</p>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-primary font-bold">D</div>
+<div>
+<p class="text-label-md font-label-md text-on-background">Deni Setiawan</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="verified">verified</span>
+                            Pelanggan Terverifikasi
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Operational & Footer -->
+<section class="w-full bg-surface-container-low py-xl md:py-[120px]" id="kontak">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-start">
+<div class="flex flex-col gap-md">
+<div class="flex flex-col gap-sm">
+<span class="text-primary font-bold text-label-sm uppercase tracking-widest">HUBUNGI KAMI</span>
+<h2 class="text-headline-lg font-headline-lg text-on-background">Area Operasional &amp; Jam Kerja</h2>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<p class="text-body-md font-body-md">Senin - Minggu: 07:00 - 21:00</p>
+</div>
+</div>
+<div class="w-full aspect-video bg-surface-container border border-outline-variant rounded-xl overflow-hidden relative">
+<div class="absolute inset-0 flex items-center justify-center text-on-surface-variant opacity-50">
+<span class="material-symbols-outlined text-[48px]" data-icon="map">map</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md md:p-lg rounded-xl border border-outline-variant shadow-sm">
+<h3 class="text-headline-md font-headline-md text-on-background mb-md">Konsultasi Sekarang</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-md">Pilih masalah AC Anda untuk penanganan lebih cepat:</p>
+<div class="flex flex-wrap gap-xs mb-lg">
+<span class="px-sm py-xs rounded-full border border-outline-variant bg-surface text-label-sm font-label-sm text-on-surface-variant">AC Bocor Air</span>
+<span class="px-sm py-xs rounded-full border border-outline-variant bg-surface text-label-sm font-label-sm text-on-surface-variant">AC Tidak Dingin</span>
+</div>
+<a class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded-lg hover:bg-primary-container transition-colors text-label-md font-label-md gap-2 shadow-sm" href="https://api.whatsapp.com/send?phone=1234567890" target="_blank">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                    Hubungi Teknisi via WhatsApp
+                </a>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-inverse-surface w-full py-xl px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter border-t border-outline-variant">
+<div class="md:col-span-2 flex flex-col gap-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="lock" data-weight="fill">lock</span>
+<span class="text-headline-md font-headline-md font-bold text-inverse-on-surface">Rangga Teknik</span>
+</div>
+<p class="text-body-md font-body-md text-surface-variant max-w-[400px]">Spesialis Tata Udara Berlisensi. Solusi terpercaya untuk kenyamanan ruang Anda.</p>
+</div>
+<div>
+<h4 class="text-label-md font-label-md font-bold text-primary-fixed mb-sm uppercase tracking-wider">Tautan Cepat</h4>
+<ul class="flex flex-col gap-sm">
+<li><button class="text-body-md font-body-md text-surface-variant hover:text-inverse-on-surface transition-colors hover:underline text-left" onclick="openModal('modal-area')">Area Layanan</button></li>
+<li><button class="text-body-md font-body-md text-surface-variant hover:text-inverse-on-surface transition-colors hover:underline text-left" onclick="openModal('modal-bantuan')">Bantuan</button></li>
+<li><button class="text-body-md font-body-md text-surface-variant hover:text-inverse-on-surface transition-colors hover:underline text-left" onclick="openModal('modal-karir')">Karir</button></li>
+</ul>
+</div>
+<div>
+<h4 class="text-label-md font-label-md font-bold text-primary-fixed mb-sm uppercase tracking-wider">Legal</h4>
+<ul class="flex flex-col gap-sm">
+<li><button class="text-body-md font-body-md text-surface-variant hover:text-inverse-on-surface transition-colors hover:underline text-left" onclick="openModal('modal-privacy')">Kebijakan Privasi</button></li>
+<li><button class="text-body-md font-body-md text-surface-variant hover:text-inverse-on-surface transition-colors hover:underline text-left" onclick="openModal('modal-terms')">Syarat &amp; Ketentuan</button></li>
+</ul>
+</div>
+<div class="col-span-1 md:col-span-4 mt-lg pt-lg border-t border-tertiary flex flex-col md:flex-row justify-between items-center gap-sm text-label-sm font-label-sm text-surface-variant">
+<p>© 2024 Rangga Teknik. Spesialis Tata Udara Berlisensi.</p>
+</div>
+</footer>
+<!-- Modals -->
+<!-- Area Layanan Modal -->
+<div class="fixed inset-0 z-[60] hidden" id="modal-area">
+<div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm" onclick="closeModal('modal-area')"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface border border-outline-variant rounded-lg shadow-xl overflow-hidden">
+<div class="flex justify-between items-center p-md border-b border-outline-variant bg-surface-container">
+<h3 class="text-headline-md font-headline-md text-primary">Wilayah Operasional Resmi</h3>
+<button class="text-on-surface hover:bg-surface-variant p-xs rounded-lg transition-colors" onclick="closeModal('modal-area')">
+<span class="material-symbols-outlined font-bold">close</span>
+</button>
+</div>
+<div class="p-md bg-background">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<div class="p-sm bg-surface-container-low border border-outline-variant rounded-lg">
+<h4 class="font-bold text-primary mb-xs">Jakarta Selatan</h4>
+<p class="text-body-md text-on-surface-variant">Cilandak, Jagakarsa, Kebayoran Baru, Kebayoran Lama, Mampang Prapatan, Pancoran, Pasar Minggu, Pesanggrahan, Setiabudi, Tebet</p>
+</div>
+<div class="p-sm bg-surface-container-low border border-outline-variant rounded-lg">
+<h4 class="font-bold text-primary mb-xs">Tangerang Selatan</h4>
+<p class="text-body-md text-on-surface-variant">Serpong, Ciputat, Bintaro, Pamulang, Setu, Pondok Aren</p>
+</div>
+<div class="p-sm bg-surface-container-low border border-outline-variant rounded-lg">
+<h4 class="font-bold text-primary mb-xs">Jakarta Timur</h4>
+<p class="text-body-md text-on-surface-variant">Matraman, Pulo Gadung, Jatinegara, Kramat Jati, Pasar Rebo, Duren Sawit, Makasar, Ciracas, Cipayung, Cakung</p>
+</div>
+<div class="p-sm bg-surface-container-low border border-outline-variant rounded-lg">
+<h4 class="font-bold text-primary mb-xs">Jakarta Pusat</h4>
+<p class="text-body-md text-on-surface-variant">Menteng, Senen, Cempaka Putih, Kemayoran, Tanah Abang, Gambir</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bantuan Modal -->
+<div class="fixed inset-0 z-[60] hidden" id="modal-bantuan">
+<div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm" onclick="closeModal('modal-bantuan')"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-xl bg-surface border border-outline-variant rounded-lg shadow-xl overflow-hidden">
+<div class="flex justify-between items-center p-md border-b border-outline-variant bg-surface-container">
+<h3 class="text-headline-md font-headline-md text-primary">Bantuan &amp; FAQ</h3>
+<button class="text-on-surface hover:bg-surface-variant p-xs rounded-lg transition-colors" onclick="closeModal('modal-bantuan')">
+<span class="material-symbols-outlined font-bold">close</span>
+</button>
+</div>
+<div class="p-md flex flex-col gap-sm bg-background">
+<div class="accordion-item border border-outline-variant rounded-lg bg-surface overflow-hidden">
+<button class="w-full flex justify-between items-center p-md text-left transition-colors hover:bg-surface-container-low" onclick="toggleAccordion(this)">
+<span class="font-bold text-on-background">Apakah layanan servis AC Rangga Teknik bergaransi?</span>
+<span class="material-symbols-outlined transition-transform chevron-icon">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="px-md pb-md text-body-md text-on-surface-variant border-t border-outline-variant pt-md">
+                        Ya, kami berkomitmen memberikan garansi penuh selama 30 hari untuk pengerjaan teknis yang sama.
+                    </div>
+</div>
+</div>
+<div class="accordion-item border border-outline-variant rounded-lg bg-surface overflow-hidden">
+<button class="w-full flex justify-between items-center p-md text-left transition-colors hover:bg-surface-container-low" onclick="toggleAccordion(this)">
+<span class="font-bold text-on-background">Berapa biaya pengecekan jika AC tidak jadi diperbaiki?</span>
+<span class="material-symbols-outlined transition-transform chevron-icon">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="px-md pb-md text-body-md text-on-surface-variant border-t border-outline-variant pt-md">
+                        Biaya pengecekan flat sesuai skema data standar kami, yaitu sebesar Rp 50.000.
+                    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Karir Modal -->
+<div class="fixed inset-0 z-[60] hidden" id="modal-karir">
+<div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm" onclick="closeModal('modal-karir')"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-surface border border-outline-variant rounded-lg shadow-xl overflow-hidden">
+<div class="flex justify-between items-center p-md border-b border-outline-variant bg-surface-container">
+<h3 class="text-headline-md font-headline-md text-primary">Karir &amp; Kemitraan</h3>
+<button class="text-on-surface hover:bg-surface-variant p-xs rounded-lg transition-colors" onclick="closeModal('modal-karir')">
+<span class="material-symbols-outlined font-bold">close</span>
+</button>
+</div>
+<div class="p-md text-center bg-background">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mx-auto mb-md">
+<span class="material-symbols-outlined text-[32px]">handshake</span>
+</div>
+<h4 class="text-headline-md font-headline-md text-on-background mb-sm">Gabung Menjadi Mitra Teknisi AC Profesional</h4>
+<p class="text-body-md text-on-surface-variant mb-lg">Kami membuka lowongan kemitraan bagi teknisi HVAC berpengalaman dan tersertifikasi lokal untuk menangani pesanan perawatan rutin dan perbaikan.</p>
+<a class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded-lg hover:bg-primary-container transition-all text-label-md font-label-md gap-2" href="https://api.whatsapp.com/send?phone=1234567890&amp;text=Halo%20Rangga%20Teknik,%20saya%20ingin%20mengirimkan%20kualifikasi%20untuk%20mitra%20teknisi." onclick="handleCareerClick()" target="_blank">
+<span class="material-symbols-outlined">send</span>
+                Kirim Kualifikasi via WhatsApp
+            </a>
+</div>
+</div>
+</div>
+<!-- Floating WhatsApp -->
+<a class="fixed bottom-lg right-lg bg-[#25D366] text-white p-sm rounded-full shadow-lg hover:scale-105 transition-transform z-50 flex items-center justify-center h-14 w-14 group" href="https://api.whatsapp.com/send?phone=1234567890" target="_blank">
+<span class="material-symbols-outlined text-[32px]" data-icon="chat">chat</span>
+</a>
+<script>
+    function openModal(id) {
+        document.getElementById(id).classList.remove('hidden');
+        document.body.classList.add('modal-active');
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).classList.add('hidden');
+        document.body.classList.remove('modal-active');
+    }
+
+    function toggleAccordion(btn) {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('accordion-active');
+        
+        // Close other items if needed (optional)
+        document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('accordion-active'));
+        
+        if (!isActive) {
+            item.classList.add('accordion-active');
+        }
+    }
+
+    function handleCareerClick() {
+        // Analytic trigger placeholder
+        console.log('click_wa_career event triggered');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+                    b.classList.add('bg-surface', 'text-on-surface-variant', 'border-outline-variant');
+                });
+                btn.classList.remove('bg-surface', 'text-on-surface-variant', 'border-outline-variant');
+                btn.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+
+                const filter = btn.dataset.filter;
+                serviceCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+</script>
+<!-- Privacy Modal -->
+<div class="fixed inset-0 z-[60] hidden" id="modal-privacy"><div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm" onclick="closeModal('modal-privacy')"></div><div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface-container-lowest border border-outline-variant rounded-lg shadow-xl overflow-hidden flex flex-col max-h-[90vh]"><div class="flex justify-between items-center p-md border-b border-outline-variant bg-surface-container"><h3 class="text-headline-md font-headline-md text-primary">Kebijakan Privasi Rangga Teknik</h3><button class="text-on-surface hover:bg-surface-variant p-xs rounded-lg transition-colors" onclick="closeModal('modal-privacy')"><span class="material-symbols-outlined font-bold">close</span></button></div><div class="p-md bg-surface-container-lowest overflow-y-auto"><div class="flex flex-col gap-md text-on-surface"><p class="text-body-md leading-relaxed">Kami berkomitmen melindungi data pribadi Anda. Semua informasi berupa Nama, Nomor WhatsApp, dan Alamat Lokasi dikumpulkan murni untuk penjadwalan serta pengiriman teknisi HVAC ke lokasi Anda.</p><p class="text-body-md leading-relaxed">Sesuai standar SSL Secure Connection kami, data Anda tidak akan diperjualbelikan, disebarkan, atau digunakan untuk keperluan pemasaran luar platform.</p></div></div></div></div>
+<!-- Terms Modal -->
+<div class="fixed inset-0 z-[60] hidden" id="modal-terms"><div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm" onclick="closeModal('modal-terms')"></div><div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface-container-lowest border border-outline-variant rounded-lg shadow-xl overflow-hidden flex flex-col max-h-[90vh]"><div class="flex justify-between items-center p-md border-b border-outline-variant bg-surface-container"><h3 class="text-headline-md font-headline-md text-primary">Syarat &amp; Ketentuan Layanan</h3><button class="text-on-surface hover:bg-surface-variant p-xs rounded-lg transition-colors" onclick="closeModal('modal-terms')"><span class="material-symbols-outlined font-bold">close</span></button></div><div class="p-md bg-surface-container-lowest overflow-y-auto"><div class="flex flex-col gap-md text-on-surface"><section><h4 class="font-bold mb-xs">1. Flat Fee</h4><p class="text-body-md leading-relaxed">Biaya pengecekan flat sebesar Rp 50.000 berlaku apabila teknisi telah melakukan diagnosa namun pelanggan memutuskan untuk tidak melanjutkan ke tahap perbaikan atau penggantian suku cadang.</p></section><section><h4 class="font-bold mb-xs">2. Ketentuan Garansi</h4><p class="text-body-md leading-relaxed">Kami memberikan garansi pengerjaan selama 30 hari kalender terhitung sejak tanggal servis selesai. Garansi hanya berlaku untuk jenis kerusakan atau unit yang sama dengan yang dikerjakan sebelumnya.</p></section><section><h4 class="font-bold mb-xs">3. Akses dan Keamanan</h4><p class="text-body-md leading-relaxed">Pelanggan wajib menyediakan akses yang aman dan memadai ke unit AC (indoor/outdoor). Teknisi berhak menunda pengerjaan jika kondisi lapangan dinilai membahayakan keselamatan kerja.</p></section></div></div></div></div></body></html>
