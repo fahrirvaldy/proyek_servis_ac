@@ -127,21 +127,46 @@
                 <span class="material-symbols-outlined text-primary filled" data-icon="lock">lock</span>
                 <span class="text-headline-md font-bold text-primary tracking-tight">Rangga Teknik</span>
             </div>
-            <nav class="hidden md:flex items-center gap-gutter">
-                <a class="text-primary border-b-2 border-primary pb-1 text-label-md font-medium" href="#layanan">Layanan</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-medium" href="#tentang-kami">Tentang Kami</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-medium" href="#testimoni">Testimoni</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-medium" href="#kontak">Kontak</a>
+            <nav class="hidden md:flex items-center gap-gutter" id="desktop-nav">
+                <a class="nav-link transition-all duration-300 ease-in-out text-label-md font-medium text-primary border-b-2 border-primary pb-1" href="#layanan">Layanan</a>
+                <a class="nav-link transition-all duration-300 ease-in-out text-label-md font-medium text-on-surface-variant hover:text-primary" href="#tentang-kami">Tentang Kami</a>
+                <a class="nav-link transition-all duration-300 ease-in-out text-label-md font-medium text-on-surface-variant hover:text-primary" href="#testimoni">Testimoni</a>
+                <a class="nav-link transition-all duration-300 ease-in-out text-label-md font-medium text-on-surface-variant hover:text-primary" href="#kontak">Kontak</a>
             </nav>
-            <a class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded hover:bg-primary-container transition-all text-label-md font-semibold scale-95 active:scale-90" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20ingin%20memesan%20layanan%20servis." target="_blank">
+            <a class="hidden md:inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded-[4px] hover:bg-primary-container transition-all text-label-md font-semibold scale-95 active:scale-90" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20ingin%20memesan%20layanan%20servis." target="_blank">
                 Pesan Servis
                 <span class="material-symbols-outlined ml-2 text-[18px]" data-icon="arrow_forward">arrow_forward</span>
             </a>
-            <button class="md:hidden text-primary">
+            <button class="md:hidden text-primary" id="hamburger-btn">
                 <span class="material-symbols-outlined" data-icon="menu">menu</span>
             </button>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="fixed inset-0 z-[100] hidden" id="mobile-menu">
+        <div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm" id="mobile-menu-overlay"></div>
+        <div class="absolute top-0 right-0 w-[80%] max-w-sm h-full bg-surface border-l border-outline-variant shadow-2xl flex flex-col">
+            <div class="flex justify-between items-center p-md border-b border-outline-variant">
+                <span class="text-headline-md font-bold text-primary tracking-tight">Menu</span>
+                <button class="text-on-surface hover:bg-surface-variant p-xs rounded-[4px] transition-colors" id="close-menu-btn">
+                    <span class="material-symbols-outlined font-bold">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col p-md gap-md" id="mobile-nav-links">
+                <a class="mobile-nav-link transition-all duration-300 ease-in-out text-on-surface hover:text-primary text-body-lg font-medium p-sm rounded-[4px] hover:bg-surface-container" href="#layanan">Layanan</a>
+                <a class="mobile-nav-link transition-all duration-300 ease-in-out text-on-surface hover:text-primary text-body-lg font-medium p-sm rounded-[4px] hover:bg-surface-container" href="#tentang-kami">Tentang Kami</a>
+                <a class="mobile-nav-link transition-all duration-300 ease-in-out text-on-surface hover:text-primary text-body-lg font-medium p-sm rounded-[4px] hover:bg-surface-container" href="#testimoni">Testimoni</a>
+                <a class="mobile-nav-link transition-all duration-300 ease-in-out text-on-surface hover:text-primary text-body-lg font-medium p-sm rounded-[4px] hover:bg-surface-container" href="#kontak">Kontak</a>
+                <div class="mt-xl pt-xl border-t border-outline-variant">
+                    <a class="flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded-[4px] hover:bg-primary-container transition-all text-label-md font-semibold" href="https://wa.me/628161940477" target="_blank">
+                        Pesan Servis
+                        <span class="material-symbols-outlined ml-2 text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
 
     <main>
         <!-- Hero Section -->
@@ -158,7 +183,7 @@
                     Solusi profesional untuk perawatan, perbaikan, dan instalasi AC dengan teknisi bersertifikat. Layanan cepat, transparan, dan bergaransi.
                 </p>
                 <div class="flex items-center gap-sm mt-sm">
-                    <a class="inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded hover:bg-primary-container transition-all text-label-md font-semibold shadow-sm" href="#layanan">
+                    <a class="inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded-[4px] hover:bg-primary-container transition-all text-label-md font-semibold shadow-sm" href="#layanan">
                         Pesan Servis Sekarang
                         <span class="material-symbols-outlined ml-2 text-[18px]" data-icon="arrow_forward">arrow_forward</span>
                     </a>
@@ -178,74 +203,74 @@
                 </div>
                 <!-- Filters -->
                 <div class="flex flex-wrap gap-xs" id="service-filters">
-                    <button class="px-sm py-xs rounded border border-primary bg-primary text-on-primary text-label-md font-semibold transition-all filter-btn" data-filter="all">Semua</button>
-                    <button class="px-sm py-xs rounded border border-outline-variant bg-surface text-on-surface-variant hover:bg-surface-container text-label-md font-semibold transition-all filter-btn" data-filter="perawatan">Perawatan</button>
-                    <button class="px-sm py-xs rounded border border-outline-variant bg-surface text-on-surface-variant hover:bg-surface-container text-label-md font-semibold transition-all filter-btn" data-filter="perbaikan">Perbaikan</button>
-                    <button class="px-sm py-xs rounded border border-outline-variant bg-surface text-on-surface-variant hover:bg-surface-container text-label-md font-semibold transition-all filter-btn" data-filter="instalasi">Instalasi</button>
+                    <button class="px-sm py-xs rounded-[4px] border border-primary bg-primary text-on-primary text-label-md font-semibold transition-all filter-btn" data-filter="all">Semua</button>
+                    <button class="px-sm py-xs rounded-[4px] border border-outline-variant bg-surface text-on-surface-variant hover:bg-surface-container text-label-md font-semibold transition-all filter-btn" data-filter="perawatan">Perawatan</button>
+                    <button class="px-sm py-xs rounded-[4px] border border-outline-variant bg-surface text-on-surface-variant hover:bg-surface-container text-label-md font-semibold transition-all filter-btn" data-filter="perbaikan">Perbaikan</button>
+                    <button class="px-sm py-xs rounded-[4px] border border-outline-variant bg-surface text-on-surface-variant hover:bg-surface-container text-label-md font-semibold transition-all filter-btn" data-filter="instalasi">Instalasi</button>
                 </div>
             </div>
             <!-- Service Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter" id="service-grid">
                 <!-- Card 1 -->
-                <div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg card-elevation transition-all overflow-hidden" data-category="perawatan">
+                <div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-[4px] card-elevation transition-all overflow-hidden" data-category="perawatan">
                     <div class="p-md flex-1 flex flex-col gap-sm">
-                        <div class="inline-flex px-xs py-[2px] bg-surface-container text-on-secondary-fixed-variant text-[10px] font-bold tracking-wider rounded w-fit uppercase">Perawatan</div>
+                        <div class="inline-flex px-xs py-[2px] bg-surface-container text-on-secondary-fixed-variant text-[10px] font-bold tracking-wider rounded-[4px] w-fit uppercase">Perawatan</div>
                         <h3 class="text-headline-md text-on-background font-bold leading-tight">Cuci &amp; Pembersihan AC (Maintenance)</h3>
                         <p class="text-body-md text-on-surface-variant flex-1 leading-relaxed">Pembersihan menyeluruh unit indoor and outdoor untuk menjaga performa optimal and sirkulasi udara bersih.</p>
-                        <div class="mt-auto bg-surface-container-low p-sm rounded border border-outline-variant flex justify-between items-center">
+                        <div class="mt-auto bg-surface-container-high p-sm rounded-[4px] border border-outline-variant flex justify-between items-center">
                             <span class="text-label-sm font-medium text-on-surface-variant">Harga</span>
-                            <span class="text-label-md font-bold text-on-background">Mulai dari Rp 75.000</span>
+                            <span class="text-label-md font-bold text-on-background">Mulai dari Rp 100.000</span>
                         </div>
                     </div>
-                    <a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all flex justify-center items-center gap-2 text-label-md font-bold border-t border-outline-variant" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20mau%20order%20jasa%20Cuci..." target="_blank">
+                    <a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all flex justify-center items-center gap-2 text-label-md font-bold border-t border-outline-variant" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20ingin%20memesan%20layanan%20Cuci%20AC" target="_blank">
                         Pesan Sekarang
                         <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
                     </a>
                 </div>
                 <!-- Card 2 -->
-                <div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg card-elevation transition-all overflow-hidden" data-category="perawatan">
+                <div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-[4px] card-elevation transition-all overflow-hidden" data-category="perawatan">
                     <div class="p-md flex-1 flex flex-col gap-sm">
-                        <div class="inline-flex px-xs py-[2px] bg-surface-container text-on-secondary-fixed-variant text-[10px] font-bold tracking-wider rounded w-fit uppercase">Perawatan</div>
+                        <div class="inline-flex px-xs py-[2px] bg-surface-container text-on-secondary-fixed-variant text-[10px] font-bold tracking-wider rounded-[4px] w-fit uppercase">Perawatan</div>
                         <h3 class="text-headline-md text-on-background font-bold leading-tight">Pengecekan &amp; Pengisian Freon</h3>
                         <p class="text-body-md text-on-surface-variant flex-1 leading-relaxed">Diagnostik tekanan refrigerant and pengisian ulang freon (R32, R410A, R22) sesuai spesifikasi teknis pabrikan.</p>
-                        <div class="mt-auto bg-surface-container-low p-sm rounded border border-outline-variant flex justify-between items-center">
+                        <div class="mt-auto bg-surface-container-high p-sm rounded-[4px] border border-outline-variant flex justify-between items-center">
                             <span class="text-label-sm font-medium text-on-surface-variant">Harga</span>
-                            <span class="text-label-md font-bold text-on-background">Mulai dari Rp 150.000</span>
+                            <span class="text-label-md font-bold text-on-background">Mulai dari Rp 250.000</span>
                         </div>
                     </div>
-                    <a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all flex justify-center items-center gap-2 text-label-md font-bold border-t border-outline-variant" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20mau%20order%20jasa%20isi%20freon..." target="_blank">
+                    <a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all flex justify-center items-center gap-2 text-label-md font-bold border-t border-outline-variant" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20ingin%20memesan%20layanan%20Isi%20Freon" target="_blank">
                         Pesan Sekarang
                         <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
                     </a>
                 </div>
                 <!-- Card 3 -->
-                <div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg card-elevation transition-all overflow-hidden" data-category="perbaikan">
+                <div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-[4px] card-elevation transition-all overflow-hidden" data-category="perbaikan">
                     <div class="p-md flex-1 flex flex-col gap-sm">
-                        <div class="inline-flex px-xs py-[2px] bg-error-container text-on-error-container text-[10px] font-bold tracking-wider rounded w-fit uppercase">Perbaikan</div>
-                        <h3 class="text-headline-md text-on-background font-bold leading-tight">Perbaikan Kerusakan (Reparasi)</h3>
+                        <div class="inline-flex px-xs py-[2px] bg-error-container text-on-error-container text-[10px] font-bold tracking-wider rounded-[4px] w-fit uppercase">Perbaikan</div>
+                        <h3 class="text-headline-md text-on-background font-bold leading-tight">Perbaikan Kerusakan / Reparasi</h3>
                         <p class="text-body-md text-on-surface-variant flex-1 leading-relaxed">Troubleshooting komponen elektrikal, mekanikal, sensor, and perbaikan kebocoran sistem secara tuntas.</p>
-                        <div class="mt-auto bg-surface-container-low p-sm rounded border border-outline-variant flex justify-between items-center">
-                            <span class="text-label-sm font-medium text-on-surface-variant">Biaya Cek</span>
-                            <span class="text-label-md font-bold text-on-background">Rp 50.000</span>
+                        <div class="mt-auto bg-surface-container-high p-sm rounded-[4px] border border-outline-variant flex justify-between items-center">
+                            <span class="text-label-sm font-medium text-on-surface-variant">Harga</span>
+                            <span class="text-label-md font-bold text-on-background">Rp 75.000</span>
                         </div>
                     </div>
-                    <a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all flex justify-center items-center gap-2 text-label-md font-bold border-t border-outline-variant" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20mau%20order%20jasa%20perbaikan..." target="_blank">
+                    <a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all flex justify-center items-center gap-2 text-label-md font-bold border-t border-outline-variant" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20ingin%20memesan%20layanan%20Perbaikan%20AC" target="_blank">
                         Pesan Sekarang
                         <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
                     </a>
                 </div>
                 <!-- Card 4 -->
-                <div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg card-elevation transition-all overflow-hidden" data-category="instalasi">
+                <div class="service-card flex flex-col bg-surface-container-lowest border border-outline-variant rounded-[4px] card-elevation transition-all overflow-hidden" data-category="instalasi">
                     <div class="p-md flex-1 flex flex-col gap-sm">
-                        <div class="inline-flex px-xs py-[2px] bg-tertiary-container text-on-tertiary-container text-[10px] font-bold tracking-wider rounded w-fit uppercase">Instalasi</div>
+                        <div class="inline-flex px-xs py-[2px] bg-tertiary-container text-on-tertiary-container text-[10px] font-bold tracking-wider rounded-[4px] w-fit uppercase">Instalasi</div>
                         <h3 class="text-headline-md text-on-background font-bold leading-tight">Bongkar Pasang &amp; Relokasi AC</h3>
                         <p class="text-body-md text-on-surface-variant flex-1 leading-relaxed">Instalasi unit baru atau pemindahan unit lama dengan standar pemipaan and kelistrikan yang aman.</p>
-                        <div class="mt-auto bg-surface-container-low p-sm rounded border border-outline-variant flex justify-between items-center">
+                        <div class="mt-auto bg-surface-container-high p-sm rounded-[4px] border border-outline-variant flex justify-between items-center">
                             <span class="text-label-sm font-medium text-on-surface-variant">Harga</span>
-                            <span class="text-label-md font-bold text-on-background">Mulai dari Rp 250.000</span>
+                            <span class="text-label-md font-bold text-on-background">Mulai dari Rp 450.000</span>
                         </div>
                     </div>
-                    <a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all flex justify-center items-center gap-2 text-label-md font-bold border-t border-outline-variant" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20mau%20order%20jasa%20bongkar%20pasang..." target="_blank">
+                    <a class="w-full py-sm bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary transition-all flex justify-center items-center gap-2 text-label-md font-bold border-t border-outline-variant" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20ingin%20memesan%20layanan%20Bongkar%20Pasang%20AC" target="_blank">
                         Pesan Sekarang
                         <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
                     </a>
@@ -314,7 +339,7 @@
                             <p class="text-label-md font-bold text-on-background">Budi Santoso</p>
                             <p class="text-label-sm text-on-surface-variant flex items-center gap-1">
                                 <span class="material-symbols-outlined text-[14px] text-primary filled" data-icon="verified">verified</span>
-                                Pelanggan Terverifikasi
+                                Verified Customer
                             </p>
                         </div>
                     </div>
@@ -335,7 +360,7 @@
                             <p class="text-label-md font-bold text-on-background">Anita Wijaya</p>
                             <p class="text-label-sm text-on-surface-variant flex items-center gap-1">
                                 <span class="material-symbols-outlined text-[14px] text-primary filled" data-icon="verified">verified</span>
-                                Pelanggan Terverifikasi
+                                Verified Customer
                             </p>
                         </div>
                     </div>
@@ -356,7 +381,7 @@
                             <p class="text-label-md font-bold text-on-background">Deni Setiawan</p>
                             <p class="text-label-sm text-on-surface-variant flex items-center gap-1">
                                 <span class="material-symbols-outlined text-[14px] text-primary filled" data-icon="verified">verified</span>
-                                Pelanggan Terverifikasi
+                                Verified Customer
                             </p>
                         </div>
                     </div>
@@ -370,41 +395,37 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-start">
                     <div class="flex flex-col gap-md">
                         <div class="flex flex-col gap-sm">
-                            <span class="text-primary font-bold text-label-sm uppercase tracking-widest">HUBUNGI KAMI</span>
-                            <h2 class="text-headline-lg text-on-background font-bold tracking-tight">Area Operasional &amp; Jam Kerja</h2>
-                            <div class="flex items-center gap-3 text-on-surface-variant bg-surface px-sm py-xs rounded border border-outline-variant w-fit">
-                                <span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
-                                <p class="text-body-md font-semibold">Senin - Minggu: 07:00 - 21:00</p>
-                            </div>
+                            <span class="text-primary font-bold text-label-sm uppercase tracking-widest">LOKASI &amp; KONTAK</span>
+                            <h2 class="text-headline-lg text-on-background font-bold tracking-tight">Area Operasional</h2>
                         </div>
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126906.18341629853!2d106.71967582531065!3d-6.287570490196726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1ec24229673%3A0x64fa3693e54b677a!2sJakarta%20Selatan%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1718380000000!5m2!1sid!2sid" 
-                            class="w-full aspect-video rounded-lg border border-outline-variant shadow-sm grayscale contrast-125" 
+                            class="w-full aspect-video rounded-[4px] border border-outline-variant shadow-sm grayscale contrast-125" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-                    <div class="bg-surface-container-lowest p-md md:p-lg rounded-xl border border-outline-variant shadow-lg relative overflow-hidden">
-                        <div class="absolute top-0 right-0 p-4 opacity-5">
-                            <span class="material-symbols-outlined text-[120px]" data-icon="chat_bubble">chat_bubble</span>
+                    <div class="bg-surface-container-lowest p-md md:p-lg rounded-[4px] border border-outline-variant shadow-lg relative overflow-hidden">
+                        <h3 class="text-headline-md text-on-background mb-md font-bold">Wilayah Cakupan Servis</h3>
+                        <div class="space-y-md mb-lg">
+                            <div>
+                                <h4 class="text-label-md font-bold text-primary uppercase tracking-wider mb-1">Jakarta Selatan</h4>
+                                <p class="text-body-md text-on-surface-variant leading-relaxed">Cilandak, Jagakarsa, Kebayoran Baru, Kebayoran Lama, Mampang Prapatan, Pancoran, Pasar Minggu, Pesanggrahan, Setiabudi, Tebet</p>
+                            </div>
+                            <div class="pt-md border-t border-outline-variant">
+                                <h4 class="text-label-md font-bold text-primary uppercase tracking-wider mb-1">Tangerang Selatan</h4>
+                                <p class="text-body-md text-on-surface-variant leading-relaxed">Serpong, Ciputat, Bintaro, Pamulang, Setu, Pondok Aren</p>
+                            </div>
                         </div>
-                        <h3 class="text-headline-md text-on-background mb-md font-bold">Konsultasi Sekarang</h3>
-                        <p class="text-body-md text-on-surface-variant mb-md leading-relaxed">Pilih masalah AC Anda untuk penanganan teknis yang lebih cepat and akurat:</p>
-                        <div class="flex flex-wrap gap-xs mb-lg">
-                            <span class="px-sm py-xs rounded-full border border-outline-variant bg-surface-container-low text-label-sm font-semibold text-on-surface-variant cursor-pointer hover:bg-primary hover:text-on-primary transition-all">AC Bocor Air</span>
-                            <span class="px-sm py-xs rounded-full border border-outline-variant bg-surface-container-low text-label-sm font-semibold text-on-surface-variant cursor-pointer hover:bg-primary hover:text-on-primary transition-all">AC Tidak Dingin</span>
-                            <span class="px-sm py-xs rounded-full border border-outline-variant bg-surface-container-low text-label-sm font-semibold text-on-surface-variant cursor-pointer hover:bg-primary hover:text-on-primary transition-all">AC Berisik</span>
-                            <span class="px-sm py-xs rounded-full border border-outline-variant bg-surface-container-low text-label-sm font-semibold text-on-surface-variant cursor-pointer hover:bg-primary hover:text-on-primary transition-all">Bau Tidak Sedap</span>
+                        <div class="flex items-center gap-3 text-on-surface-variant bg-surface px-sm py-xs rounded-[4px] border border-outline-variant w-fit mb-md">
+                            <span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+                            <p class="text-body-md font-semibold">Senin - Minggu: 07:00 - 21:00</p>
                         </div>
-                        <a class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded-lg hover:bg-primary-container transition-all text-label-md font-bold gap-3 shadow-md hover:shadow-xl transform hover:-translate-y-1" href="https://wa.me/628161940477" target="_blank">
+                        <a class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded-[4px] hover:bg-primary-container transition-all text-label-md font-bold gap-3 shadow-md" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20ingin%20berkonsultasi%20mengenai%20servis%20AC." target="_blank">
                             <span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
-                            Hubungi Teknisi via WhatsApp
+                            Hubungi Teknisi Sekarang
                         </a>
-                        <p class="mt-md text-[11px] text-on-surface-variant text-center opacity-70">
-                            <span class="material-symbols-outlined text-[12px] align-middle" data-icon="security">security</span>
-                            Koneksi Aman &amp; Privasi Terjamin
-                        </p>
                     </div>
                 </div>
             </div>
@@ -453,20 +474,20 @@
     <!-- Modals -->
     <div class="fixed inset-0 z-[60] hidden" id="modal-area">
         <div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm" onclick="closeModal('modal-area')"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface border border-outline-variant rounded-lg shadow-2xl overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface border border-outline-variant rounded-[4px] shadow-2xl overflow-hidden">
             <div class="flex justify-between items-center p-md border-b border-outline-variant bg-surface-container">
                 <h3 class="text-headline-md font-bold text-primary tracking-tight">Wilayah Operasional Resmi</h3>
-                <button class="text-on-surface hover:bg-surface-variant p-xs rounded-lg transition-colors" onclick="closeModal('modal-area')">
+                <button class="text-on-surface hover:bg-surface-variant p-xs rounded-[4px] transition-colors" onclick="closeModal('modal-area')">
                     <span class="material-symbols-outlined font-bold">close</span>
                 </button>
             </div>
             <div class="p-md bg-background overflow-y-auto max-h-[70vh]">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
-                    <div class="p-sm bg-surface-container-low border border-outline-variant rounded-lg">
+                    <div class="p-sm bg-surface-container-low border border-outline-variant rounded-[4px]">
                         <h4 class="font-bold text-primary mb-xs">Jakarta Selatan</h4>
                         <p class="text-body-md text-on-surface-variant leading-relaxed">Cilandak, Jagakarsa, Kebayoran Baru, Kebayoran Lama, Mampang Prapatan, Pancoran, Pasar Minggu, Pesanggrahan, Setiabudi, Tebet</p>
                     </div>
-                    <div class="p-sm bg-surface-container-low border border-outline-variant rounded-lg">
+                    <div class="p-sm bg-surface-container-low border border-outline-variant rounded-[4px]">
                         <h4 class="font-bold text-primary mb-xs">Tangerang Selatan</h4>
                         <p class="text-body-md text-on-surface-variant leading-relaxed">Serpong, Ciputat, Bintaro, Pamulang, Setu, Pondok Aren</p>
                     </div>
@@ -477,15 +498,15 @@
 
     <div class="fixed inset-0 z-[60] hidden" id="modal-bantuan">
         <div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm" onclick="closeModal('modal-bantuan')"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-xl bg-surface border border-outline-variant rounded-lg shadow-2xl overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-xl bg-surface border border-outline-variant rounded-[4px] shadow-2xl overflow-hidden">
             <div class="flex justify-between items-center p-md border-b border-outline-variant bg-surface-container">
                 <h3 class="text-headline-md font-bold text-primary tracking-tight">Bantuan &amp; FAQ</h3>
-                <button class="text-on-surface hover:bg-surface-variant p-xs rounded-lg transition-colors" onclick="closeModal('modal-bantuan')">
+                <button class="text-on-surface hover:bg-surface-variant p-xs rounded-[4px] transition-colors" onclick="closeModal('modal-bantuan')">
                     <span class="material-symbols-outlined font-bold">close</span>
                 </button>
             </div>
             <div class="p-md flex flex-col gap-sm bg-background">
-                <div class="accordion-item border border-outline-variant rounded-lg bg-surface overflow-hidden">
+                <div class="accordion-item border border-outline-variant rounded-[4px] bg-surface overflow-hidden">
                     <button class="w-full flex justify-between items-center p-md text-left transition-all hover:bg-surface-container-low" onclick="toggleAccordion(this)">
                         <span class="font-bold text-on-background">Apakah layanan servis AC Rangga Teknik bergaransi?</span>
                         <span class="material-symbols-outlined transition-transform chevron-icon">expand_more</span>
@@ -500,9 +521,9 @@
         </div>
     </div>
 
-    <a class="fixed bottom-lg right-lg bg-[#25D366] text-white p-sm rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all z-50 flex items-center justify-center h-14 w-14 group" href="https://wa.me/628161940477" target="_blank">
+    <a class="fixed bottom-lg right-lg bg-[#25D366] text-white p-sm rounded-[4px] shadow-2xl hover:scale-110 active:scale-95 transition-all z-50 flex items-center justify-center h-14 w-14 group" href="https://wa.me/628161940477?text=Halo%20Rangga%20Teknik,%20saya%20ingin%20berkonsultasi%20mengenai%20servis%20AC." target="_blank">
         <span class="material-symbols-outlined text-[32px] filled" data-icon="chat">chat</span>
-        <span class="absolute right-full mr-3 px-2 py-1 bg-on-background text-surface text-[10px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none uppercase tracking-widest">Chat Sekarang</span>
+        <span class="absolute right-full mr-3 px-2 py-1 bg-on-background text-surface text-[10px] font-bold rounded-[4px] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none uppercase tracking-widest">Chat Sekarang</span>
     </a>
 
     <script>
@@ -526,6 +547,80 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Logic
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('nav a');
+
+            const openMenu = () => {
+                mobileMenu.classList.remove('hidden');
+                document.body.classList.add('modal-active');
+            };
+
+            const closeMenu = () => {
+                mobileMenu.classList.add('hidden');
+                document.body.classList.remove('modal-active');
+            };
+
+            if (hamburgerBtn) hamburgerBtn.addEventListener('click', openMenu);
+            if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+            if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
+
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            // Navigation Active State & Scroll Spy Logic
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+            const sections = document.querySelectorAll('section[id]');
+
+            const updateActiveLink = (id) => {
+                navLinks.forEach(link => {
+                    const isActive = link.getAttribute('href') === `#${id}`;
+                    link.classList.toggle('text-primary', isActive);
+                    link.classList.toggle('border-b-2', isActive);
+                    link.classList.toggle('border-primary', isActive);
+                    link.classList.toggle('pb-1', isActive);
+                    link.classList.toggle('text-on-surface-variant', !isActive);
+                });
+
+                mobileLinks.forEach(link => {
+                    const isActive = link.getAttribute('href') === `#${id}`;
+                    link.classList.toggle('text-primary', isActive);
+                    link.classList.toggle('bg-surface-container', isActive);
+                    link.classList.toggle('text-on-surface', !isActive);
+                });
+            };
+
+            // Click Handler
+            [...navLinks, ...mobileLinks].forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const id = link.getAttribute('href').substring(1);
+                    updateActiveLink(id);
+                });
+            });
+
+            // Scroll Spy using IntersectionObserver
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observerCallback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateActiveLink(entry.target.id);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+            sections.forEach(section => observer.observe(section));
+
             const filterBtns = document.querySelectorAll('.filter-btn');
             const serviceCards = document.querySelectorAll('.service-card');
 
@@ -553,33 +648,29 @@
 
     <div class="fixed inset-0 z-[60] hidden" id="modal-karir">
         <div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm" onclick="closeModal('modal-karir')"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-surface border border-outline-variant rounded-lg shadow-2xl overflow-hidden p-md text-center">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-surface border border-outline-variant rounded-[4px] shadow-2xl overflow-hidden p-md text-center">
             <h3 class="text-headline-md font-bold text-primary mb-md">Gabung Jadi Mitra Teknisi</h3>
             <p class="text-body-md text-on-surface-variant mb-md leading-relaxed">Kami mencari teknisi HVAC berpengalaman.</p>
-            <a class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded-lg hover:bg-primary-container transition-all text-label-md font-bold" href="https://wa.me/628161940477" target="_blank">Kirim CV via WhatsApp</a>
+            <a class="w-full inline-flex items-center justify-center bg-primary text-on-primary px-lg py-sm rounded-[4px] hover:bg-primary-container transition-all text-label-md font-bold" href="https://wa.me/628161940477" target="_blank">Kirim CV via WhatsApp</a>
         </div>
     </div>
 
     <div class="fixed inset-0 z-[60] hidden" id="modal-privacy">
         <div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm" onclick="closeModal('modal-privacy')"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface border border-outline-variant rounded-lg shadow-2xl overflow-hidden p-md">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface border border-outline-variant rounded-[4px] shadow-2xl overflow-hidden p-md">
             <h3 class="text-headline-md font-bold text-primary mb-md">Kebijakan Privasi</h3>
             <p class="text-body-md text-on-surface-variant leading-relaxed">Data Anda aman bersama kami.</p>
-            <button class="mt-md px-lg py-sm bg-surface-container-high text-primary font-bold rounded border border-outline-variant" onclick="closeModal('modal-privacy')">Tutup</button>
+            <button class="mt-md px-lg py-sm bg-surface-container-high text-primary font-bold rounded-[4px] border border-outline-variant" onclick="closeModal('modal-privacy')">Tutup</button>
         </div>
     </div>
     
     <div class="fixed inset-0 z-[60] hidden" id="modal-terms">
         <div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm" onclick="closeModal('modal-terms')"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface border border-outline-variant rounded-lg shadow-2xl overflow-hidden p-md">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl bg-surface border border-outline-variant rounded-[4px] shadow-2xl overflow-hidden p-md">
             <h3 class="text-headline-md font-bold text-primary mb-md">Syarat &amp; Ketentuan</h3>
             <p class="text-body-md text-on-surface-variant leading-relaxed">Ketentuan garansi 30 hari.</p>
-            <button class="mt-md px-lg py-sm bg-surface-container-high text-primary font-bold rounded border border-outline-variant" onclick="closeModal('modal-terms')">Tutup</button>
+            <button class="mt-md px-lg py-sm bg-surface-container-high text-primary font-bold rounded-[4px] border border-outline-variant" onclick="closeModal('modal-terms')">Tutup</button>
         </div>
-    </div>
-
-</body>
-</html>      </div>
     </div>
 
 </body>
